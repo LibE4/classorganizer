@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['student'])) {
-        $query = "SELECT st_id, st_firstname, st_lastname from students";
+        $query = "SELECT id, firstname, lastname from students";
         $result = mysqli_query($link, $query);
         if (!$result) {
             echo "Error: Unable to get data.";
@@ -9,9 +9,9 @@
         while ($row = mysqli_fetch_assoc($result))
         {
           // Looping through the resultset.
-          $id = $row[st_id];
-          $firstname = $row[st_firstname];
-          $lastname = $row[st_lastname];
+          $id = $row[id];
+          $firstname = $row[firstname];
+          $lastname = $row[lastname];
           echo '<section class= "songs">
                   <h4>'.$id.'</h4>
                   <ul class="content-item">

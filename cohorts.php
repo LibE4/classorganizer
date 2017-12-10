@@ -19,10 +19,10 @@
       }
       switch ($_POST['memberType']) {
         case 'students':
-          $query = "SELECT students.st_id, st_firstname, st_lastname from (students INNER JOIN student_rooster on students.st_id = student_rooster.st_id) WHERE student_rooster.cohort_id = ".$i;
+          $query = "SELECT students.id, firstname, lastname from (students INNER JOIN student_rooster on students.id = student_rooster.st_id) WHERE student_rooster.cohort_id = ".$i;
           break;
         case 'instructors':
-          $query = "SELECT instructors.ins_id, ins_firstname, ins_lastname from (instructors INNER JOIN instructor_rooster on instructors.ins_id = instructor_rooster.ins_id) WHERE instructor_rooster.cohort_id = ".$i;
+          $query = "SELECT instructors.id, firstname, lastname from (instructors INNER JOIN instructor_rooster on instructors.id = instructor_rooster.ins_id) WHERE instructor_rooster.cohort_id = ".$i;
           break;
       }
       
@@ -36,14 +36,14 @@
         // Looping through the resultset.
         switch ($_POST['memberType']) {
           case 'students':
-            $id = $row[st_id];
-            $firstname = $row[st_firstname];
-            $lastname = $row[st_lastname];
+            $id = $row[id];
+            $firstname = $row[firstname];
+            $lastname = $row[lastname];
             break;
           case 'instructors':
-            $id = $row[ins_id];
-            $firstname = $row[ins_firstname];
-            $lastname = $row[ins_lastname];
+            $id = $row[id];
+            $firstname = $row[firstname];
+            $lastname = $row[lastname];
             break;
         }
         
